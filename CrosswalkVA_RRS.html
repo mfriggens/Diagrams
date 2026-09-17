@@ -14,13 +14,9 @@
 
 <style>
 
-  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap');
-
  
 
-/*
-
-Colorblind-friendly palette (Wong 2011, Nature Methods 8:441):
+/*Colorblind-friendly palette (Wong 2011, Nature Methods 8:441):
 
 �c1  TAR/AR4       #0072B2  (blue)
 
@@ -37,7 +33,6 @@ All backgrounds are light tints (~15% opacity) of each hue.
 */
 
  
-
 :root {
 
 �paper: #ffffff;
@@ -45,10 +40,6 @@ All backgrounds are light tints (~15% opacity) of each hue.
 �ink:   #000000;
 
 �rule:  #999999;
-
- 
-
-```
 
 /* TAR/AR4 � Wong blue */
 
@@ -90,10 +81,6 @@ All backgrounds are light tints (~15% opacity) of each hue.
 
 --trans:  #D55E00;   /* Wong vermillion */
 
-```
-
- 
-
 }
 
  
@@ -101,7 +88,6 @@ All backgrounds are light tints (~15% opacity) of each hue.
 - { box-sizing: border-box; margin: 0; padding: 0; }
 
  
-
 body {
 
 background: #ffffff;
@@ -309,7 +295,6 @@ transform: rotate(180deg);
 line-height: 1;
 
 }
-
  
 
 /* ══════════════════════════════════════
@@ -382,9 +367,7 @@ color: #ffffff;
 
 .cg-head span { font-weight: 300; font-size: 0.58rem; }
 
- 
-
-.h-row-label { background: #333333; }
+ .h-row-label { background: #333333; }
 
 .h-c1        { background: var(�c1); }
 
@@ -419,7 +402,6 @@ align-items: center;
 }
 
  
-
 /* data cells � alternating row tints for columns 1�3 only; col 4 white */
 
 .cg-c1 { background: #ffffff; }
@@ -431,7 +413,6 @@ align-items: center;
 .cg-c4 { background: #ffffff; }   /* no shading on right column */
 
  
-
 /* pills */
 
 .match-pill {
@@ -481,11 +462,7 @@ font-weight: 700;
 }
 
  
-
-/* ══════════════════════════════════════
-
-PART C � RRA STRATEGY BAND
-
+/* ══════════════════════════════════════PART C � RRA STRATEGY BAND
 ══════════════════════════════════════ */
 
 .rra-band {
@@ -570,7 +547,6 @@ color: #000000;
 
 }
 
- 
 
 /* Colorblind-safe strategy backgrounds */
 
@@ -605,7 +581,6 @@ border-left: 5px solid var(�trans);
 }
 
  
-
 /* chip backgrounds � lighter tints of same hues */
 
 .chip-resist { background: #a3ddd0; }
@@ -616,11 +591,9 @@ border-left: 5px solid var(�trans);
 
 .chip-neutral{ background: #e0e0e0; }
 
- 
 
-/* ══════════════════════════════════════
 
-CAPTION
+/* ══════════════════════════════════════CAPTION
 
 ══════════════════════════════════════ */
 
@@ -661,7 +634,6 @@ padding-top: 8px;
 }
 
  
-
 /* fade-in */
 
 .wrap { animation: fadeUp .45s ease both; }
@@ -685,18 +657,13 @@ to   { opacity: 1; transform: translateY(0); }
 <div class="wrap">
 
  
-
   <!-- ═══════════════ PART A ═══════════════ -->
-
  
 
   <div class="comp-section-label">Part A � Evolution of the IPCC Vulnerability Concept</div>
 
   <div class="evolution-band">
 
- 
-
-```
 
 <div class="evo-block evo-block-1">
 
@@ -714,7 +681,7 @@ to   { opacity: 1; transform: translateY(0); }
 
 </div>
 
- 
+
 
 <div class="evo-arrow">
 
@@ -729,7 +696,6 @@ to   { opacity: 1; transform: translateY(0); }
 </div>
 
  
-
 <div class="evo-block evo-block-2">
 
   <div class="evo-label">SREX / AR5 / AR6 &nbsp;(IPCC 2012�2022)</div>
@@ -747,7 +713,6 @@ to   { opacity: 1; transform: translateY(0); }
   </div>
 
 </div>
-
  
 
 <div class="evo-arrow">
@@ -761,7 +726,6 @@ to   { opacity: 1; transform: translateY(0); }
   <div class="evo-arrow-line"></div>
 
 </div>
-
  
 
 <div class="evo-block evo-block-3">
@@ -782,13 +746,9 @@ to   { opacity: 1; transform: translateY(0); }
 
 </div>
 
-```
-
- 
 
   </div><!-- /evolution-band -->
 
- 
 
   <!-- ═══════════════ PART B ═══════════════ -->
 
@@ -797,10 +757,6 @@ to   { opacity: 1; transform: translateY(0); }
   <div class="comp-section-label">Part B � Cross-Framework Component Mapping</div>
 
   <div class="comp-grid">
-
- 
-
-```
 
 <!-- Header row -->
 
@@ -819,7 +775,6 @@ to   { opacity: 1; transform: translateY(0); }
 </div>
 
  
-
 <!-- Climate Driver -->
 
 <div class="cg-row">
@@ -861,7 +816,6 @@ to   { opacity: 1; transform: translateY(0); }
 </div>
 
  
-
 <!-- Intrinsic Sensitivity -->
 
 <div class="cg-row">
@@ -902,7 +856,7 @@ to   { opacity: 1; transform: translateY(0); }
 
 </div>
 
- 
+
 
 <!-- Response Capacity -->
 
@@ -945,7 +899,6 @@ to   { opacity: 1; transform: translateY(0); }
 </div>
 
  
-
 <!-- Integrated Output -->
 
 <div class="cg-row">
@@ -986,9 +939,6 @@ to   { opacity: 1; transform: translateY(0); }
 
 </div>
 
-```
-
- 
 
   </div><!-- /comp-grid -->
 
@@ -1001,10 +951,6 @@ to   { opacity: 1; transform: translateY(0); }
   <div class="comp-section-label">Part C � RRA Strategy Alignment</div>
 
   <div class="rra-band">
-
- 
-
-```
 
 <div class="rra-block rra-resist">
 
@@ -1028,9 +974,7 @@ to   { opacity: 1; transform: translateY(0); }
 
 </div>
 
- 
-
-<div class="rra-block rra-resil">
+ <div class="rra-block rra-resil">
 
   <div class="rra-label">Strategy 2</div>
 
@@ -1051,9 +995,7 @@ to   { opacity: 1; transform: translateY(0); }
   </div>
 
 </div>
-
  
-
 <div class="rra-block rra-trans">
 
   <div class="rra-label">Strategy 3</div>
@@ -1075,10 +1017,6 @@ to   { opacity: 1; transform: translateY(0); }
   </div>
 
 </div>
-
-```
-
- 
 
   </div><!-- /rra-band -->
 
