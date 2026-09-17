@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+
+ 
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Framework Convergence Figure</title>
+
+<style>
+
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap');
+
+ 
+
+/*
+
+Colorblind-friendly palette (Wong 2011, Nature Methods 8:441):
+
+�c1  TAR/AR4       #0072B2  (blue)
+
+�c2  SREX/AR5/AR6  #E69F00  (orange)
+
+�c3  RCC           #009E73  (teal-green)
+
+�c4  RRA           #56B4E9  (sky blue)  � used for column 4 header only
+
+�c5  Strategy      #CC79A7  (pink/mauve) � unused here
+
+All backgrounds are light tints (~15% opacity) of each hue.
+
+*/
+
+ 
+
+:root {
+
+�paper: #ffffff;
+
+�ink:   #000000;
+
+�rule:  #999999;
+
+ 
+
+```
+
+/* TAR/AR4 � Wong blue */
+
+--c1:    #0072B2;
+
+--c1b:   #cce3f3;
+
+ 
+
+/* SREX/AR5/AR6 � Wong orange */
+
+--c2:    #E69F00;
+
+--c2b:   #faeacc;
+
+ 
+
+/* RCC � Wong teal-green */
+
+--c3:    #009E73;
+
+--c3b:   #ccede4;
+
+ 
+
+/* RRA header � Wong sky blue */
+
+--c4:    #0072B2;
+
+--c4b:   #cce3f3;
+
+ 
+
+/* Strategy chips */
+
+--resist: #009E73;
+
+--resil:  #E69F00;
+
+--trans:  #D55E00;   /* Wong vermillion */
+
+```
+
+ 
+
+}
+
+ 
+
+- { box-sizing: border-box; margin: 0; padding: 0; }
+
+ 
+
+body {
+
+background: #ffffff;
+
+font-family: �DM Sans�, sans-serif;
+
+color: #000000;
+
+min-height: 100vh;
+
+display: flex;
+
+align-items: flex-start;
+
+justify-content: center;
+
+padding: 40px 24px 56px;
+
+}
+
+ 
+
+.wrap {
+
+width: 100%;
+
+max-width: 1040px;
+
+background: #ffffff;
+
+padding: 32px 40px 32px;
+
+}
+
+ 
+
+/* ── SECTION LABELS ── */
+
+.comp-section-label {
+
+font-size: 0.62rem;
+
+font-weight: 600;
+
+letter-spacing: 0.14em;
+
+text-transform: uppercase;
+
+color: #000000;
+
+margin-bottom: 10px;
+
+border-left: 3px solid var(�rule);
+
+padding-left: 8px;
+
+}
+
+ 
+
+/* ══════════════════════════════════════
+
+PART A � EVOLUTION BAND
+
+══════════════════════════════════════ */
+
+.evolution-band {
+
+display: grid;
+
+grid-template-columns: 1fr 48px 1fr 48px 1fr;
+
+gap: 0;
+
+margin-bottom: 28px;
+
+align-items: stretch;
+
+}
+
+ 
+
+.evo-block {
+
+border-radius: 4px;
+
+padding: 14px 16px;
+
+position: relative;
+
+}
+
+.evo-label {
+
+font-size: 0.6rem;
+
+font-weight: 600;
+
+letter-spacing: 0.12em;
+
+text-transform: uppercase;
+
+margin-bottom: 3px;
+
+color: #000000;
+
+}
+
+.evo-title {
+
+font-family: �Cormorant Garamond�, serif;
+
+font-size: 1.0rem;
+
+font-weight: 700;
+
+line-height: 1.25;
+
+margin-bottom: 6px;
+
+color: #000000;
+
+}
+
+.evo-eq {
+
+font-size: 0.72rem;
+
+font-weight: 400;
+
+line-height: 1.6;
+
+color: #000000;
+
+}
+
+.evo-eq strong  { font-weight: 700; }
+
+.evo-eq span    { font-size: 0.65rem; color: #000000; }
+
+ 
+
+.evo-block-1 { background: var(�c1b); border-top: 3px solid var(�c1); }
+
+.evo-block-2 { background: var(�c2b); border-top: 3px solid var(�c2); }
+
+.evo-block-3 { background: var(�c3b); border-top: 3px solid var(�c3); }
+
+ 
+
+.evo-arrow {
+
+display: flex;
+
+flex-direction: column;
+
+align-items: center;
+
+justify-content: center;
+
+gap: 3px;
+
+}
+
+.evo-arrow-line {
+
+width: 2px;
+
+flex: 1;
+
+background: var(�rule);
+
+}
+
+.evo-arrow-head {
+
+width: 0; height: 0;
+
+border-left: 5px solid transparent;
+
+border-right: 5px solid transparent;
+
+border-top: 7px solid var(�rule);
+
+}
+
+.evo-arrow-txt {
+
+font-size: 0.56rem;
+
+font-weight: 600;
+
+letter-spacing: 0.1em;
+
+text-transform: uppercase;
+
+color: #000000;
+
+text-align: center;
+
+writing-mode: vertical-lr;
+
+transform: rotate(180deg);
+
+line-height: 1;
+
+}
+
+ 
+
+/* ══════════════════════════════════════
+
+PART B � COMPARISON TABLE
+
+══════════════════════════════════════ */
+
+.comp-grid {
+
+display: grid;
+
+grid-template-columns: 130px 1fr 1fr 1fr 1fr;
+
+border: 1.5px solid var(�rule);
+
+border-radius: 4px;
+
+overflow: hidden;
+
+margin-bottom: 28px;
+
+}
+
+ 
+
+.cg-cell {
+
+padding: 10px 13px;
+
+border-right: 1px solid var(�rule);
+
+border-bottom: 1px solid var(�rule);
+
+font-size: 0.72rem;
+
+line-height: 1.5;
+
+vertical-align: top;
+
+color: #000000;
+
+}
+
+.cg-cell:last-child { border-right: none; }
+
+.cg-row:last-child .cg-cell { border-bottom: none; }
+
+.cg-row { display: contents; }
+
+ 
+
+/* header cells */
+
+.cg-head {
+
+font-size: 0.62rem;
+
+font-weight: 700;
+
+letter-spacing: 0.08em;
+
+text-transform: uppercase;
+
+line-height: 1.4;
+
+color: #ffffff;
+
+}
+
+.cg-head span { font-weight: 300; font-size: 0.58rem; }
+
+ 
+
+.h-row-label { background: #333333; }
+
+.h-c1        { background: var(�c1); }
+
+.h-c2        { background: var(�c2); color: #000000; }   /* orange � use dark text */
+
+.h-c3        { background: var(�c3); }
+
+.h-c4        { background: #333333; }
+
+ 
+
+/* row label cells */
+
+.cg-row-label {
+
+background: #f0f0f0;
+
+font-size: 0.65rem;
+
+font-weight: 600;
+
+letter-spacing: 0.05em;
+
+text-transform: uppercase;
+
+color: #000000;
+
+display: flex;
+
+align-items: center;
+
+}
+
+ 
+
+/* data cells � alternating row tints for columns 1�3 only; col 4 white */
+
+.cg-c1 { background: #ffffff; }
+
+.cg-c2 { background: #fafafa; }
+
+.cg-c3 { background: #ffffff; }
+
+.cg-c4 { background: #ffffff; }   /* no shading on right column */
+
+ 
+
+/* pills */
+
+.match-pill {
+
+font-size: 0.62rem;
+
+font-weight: 600;
+
+padding: 2px 8px;
+
+border-radius: 20px;
+
+display: inline-block;
+
+margin-bottom: 3px;
+
+color: #000000;
+
+}
+
+.pill-c1   { background: var(�c1b); }
+
+.pill-c2   { background: var(�c2b); }
+
+.pill-c3   { background: var(�c3b); }
+
+.pill-rra  { background: #e8e8e8; }
+
+ 
+
+.match-txt {
+
+font-size: 0.70rem;
+
+line-height: 1.5;
+
+color: #000000;
+
+}
+
+.match-txt em {
+
+font-style: normal;
+
+font-weight: 700;
+
+}
+
+ 
+
+/* ══════════════════════════════════════
+
+PART C � RRA STRATEGY BAND
+
+══════════════════════════════════════ */
+
+.rra-band {
+
+display: grid;
+
+grid-template-columns: 1fr 1fr 1fr;
+
+gap: 12px;
+
+margin-bottom: 28px;
+
+}
+
+ 
+
+.rra-block {
+
+border-radius: 4px;
+
+padding: 13px 15px;
+
+}
+
+.rra-label {
+
+font-size: 0.6rem;
+
+font-weight: 600;
+
+letter-spacing: 0.12em;
+
+text-transform: uppercase;
+
+margin-bottom: 4px;
+
+color: #000000;
+
+}
+
+.rra-title {
+
+font-family: �Cormorant Garamond�, serif;
+
+font-size: 1.05rem;
+
+font-weight: 700;
+
+margin-bottom: 5px;
+
+color: #000000;
+
+}
+
+.rra-desc {
+
+font-size: 0.70rem;
+
+line-height: 1.55;
+
+color: #000000;
+
+margin-bottom: 8px;
+
+}
+
+.chip-row { display: flex; flex-wrap: wrap; gap: 4px; }
+
+.chip {
+
+font-size: 0.60rem;
+
+font-weight: 600;
+
+padding: 2px 7px;
+
+border-radius: 20px;
+
+letter-spacing: 0.04em;
+
+color: #000000;
+
+}
+
+ 
+
+/* Colorblind-safe strategy backgrounds */
+
+/* Resistance: tint of Wong teal-green #009E73 */
+
+.rra-resist {
+
+background: #ccede4;
+
+border-left: 5px solid var(�resist);
+
+}
+
+/* Resilience: tint of Wong orange #E69F00 */
+
+.rra-resil {
+
+background: #faeacc;
+
+border-left: 5px solid var(�resil);
+
+}
+
+/* Transition: tint of Wong vermillion #D55E00 */
+
+.rra-trans {
+
+background: #f7ddd1;
+
+border-left: 5px solid var(�trans);
+
+}
+
+ 
+
+/* chip backgrounds � lighter tints of same hues */
+
+.chip-resist { background: #a3ddd0; }
+
+.chip-resil  { background: #f5d48a; }
+
+.chip-trans  { background: #f0b99a; }
+
+.chip-neutral{ background: #e0e0e0; }
+
+ 
+
+/* ══════════════════════════════════════
+
+CAPTION
+
+══════════════════════════════════════ */
+
+.caption {
+
+border-top: 1.5px solid var(�rule);
+
+padding-top: 14px;
+
+font-size: 0.72rem;
+
+font-weight: 400;
+
+line-height: 1.80;
+
+color: #000000;
+
+}
+
+.caption strong { font-weight: 700; color: #000000; }
+
+.caption .refs {
+
+margin-top: 10px;
+
+font-size: 0.68rem;
+
+font-style: italic;
+
+line-height: 1.7;
+
+color: #000000;
+
+border-top: 1px solid #cccccc;
+
+padding-top: 8px;
+
+}
+
+ 
+
+/* fade-in */
+
+.wrap { animation: fadeUp .45s ease both; }
+
+@keyframes fadeUp {
+
+from { opacity: 0; transform: translateY(10px); }
+
+to   { opacity: 1; transform: translateY(0); }
+
+}
+
+</style>
+
+ 
+
+</head>
+
+<body>
+
+<div class="wrap">
+
+ 
+
+  <!-- ═══════════════ PART A ═══════════════ -->
+
+ 
+
+  <div class="comp-section-label">Part A � Evolution of the IPCC Vulnerability Concept</div>
+
+  <div class="evolution-band">
+
+ 
+
+```
+
+<div class="evo-block evo-block-1">
+
+  <div class="evo-label">TAR / AR4 &nbsp;(IPCC 2001, 2007)</div>
+
+  <div class="evo-title">Vulnerability-Centered</div>
+
+  <div class="evo-eq">
+
+    <strong>V</strong> = f(<strong>E</strong>xposure, <strong>S</strong>ensitivity, <strong>AC</strong>)<br>
+
+    <span>Exposure is a hazard-centered concept included <em>within</em> vulnerability. All three components are integrated into a single vulnerability score.</span>
+
+  </div>
+
+</div>
+
+ 
+
+<div class="evo-arrow">
+
+  <div class="evo-arrow-line"></div>
+
+  <div class="evo-arrow-txt">Revised</div>
+
+  <div class="evo-arrow-head"></div>
+
+  <div class="evo-arrow-line"></div>
+
+</div>
+
+ 
+
+<div class="evo-block evo-block-2">
+
+  <div class="evo-label">SREX / AR5 / AR6 &nbsp;(IPCC 2012�2022)</div>
+
+  <div class="evo-title">Risk-Centered</div>
+
+  <div class="evo-eq">
+
+    <strong>Risk</strong> = f(<strong>Hazard</strong>, <strong>Exposure</strong>, <strong>Vulnerability</strong>)<br>
+
+    <strong>V</strong> = f(<strong>S</strong>ensitivity, <strong>Capacity</strong> to cope &amp; adapt)<br>
+
+    <span>Exposure is <em>separated</em> from vulnerability and redefined as elements at risk. Vulnerability narrows to sensitivity + adaptive capacity.</span>
+
+  </div>
+
+</div>
+
+ 
+
+<div class="evo-arrow">
+
+  <div class="evo-arrow-line"></div>
+
+  <div class="evo-arrow-txt">Parallel</div>
+
+  <div class="evo-arrow-head"></div>
+
+  <div class="evo-arrow-line"></div>
+
+</div>
+
+ 
+
+<div class="evo-block evo-block-3">
+
+  <div class="evo-label">Refugia Conservation Cycle &nbsp;(Morelli et al. 2020, 2026)</div>
+
+  <div class="evo-title">Refugia-Centered</div>
+
+  <div class="evo-eq">
+
+    <strong>Refugia Potential</strong> = f(<strong>CC Exposure</strong>, <strong>Conservation Capacity</strong>)<br>
+
+    <strong>Cons. Capacity</strong> = <strong>S</strong>ensitivity + <strong>AC</strong> (ecological &amp; management)<br>
+
+    <span>Climate change exposure is the external climate context. Conservation capacity integrates sensitivity and adaptive capacity of the system.</span>
+
+  </div>
+
+</div>
+
+```
+
+ 
+
+  </div><!-- /evolution-band -->
+
+ 
+
+  <!-- ═══════════════ PART B ═══════════════ -->
+
+ 
+
+  <div class="comp-section-label">Part B � Cross-Framework Component Mapping</div>
+
+  <div class="comp-grid">
+
+ 
+
+```
+
+<!-- Header row -->
+
+<div class="cg-row">
+
+  <div class="cg-cell cg-head h-row-label">Component</div>
+
+  <div class="cg-cell cg-head h-c1">TAR/AR4<br><span>IPCC 2001/2007</span></div>
+
+  <div class="cg-cell cg-head h-c2">SREX/AR5/AR6<br><span>IPCC 2012�2022</span></div>
+
+  <div class="cg-cell cg-head h-c3">Refugia Cons. Cycle<br><span>Morelli et al. 2020, 2026</span></div>
+
+  <div class="cg-cell cg-head h-c4">Role in RRA Strategy</div>
+
+</div>
+
+ 
+
+<!-- Climate Driver -->
+
+<div class="cg-row">
+
+  <div class="cg-cell cg-row-label">Climate Driver</div>
+
+  <div class="cg-cell cg-c1">
+
+    <span class="match-pill pill-c1">Exposure</span><br>
+
+    <span class="match-txt">Hazard-centered; included <em>within</em> vulnerability. Indicators: drought, heat, flood frequency.</span>
+
+  </div>
+
+  <div class="cg-cell cg-c2">
+
+    <span class="match-pill pill-c2">Hazard + Exposure</span><br>
+
+    <span class="match-txt">Exposure redefined as <em>elements at risk</em> (species, ecosystems). Separated from vulnerability.</span>
+
+  </div>
+
+  <div class="cg-cell cg-c3">
+
+    <span class="match-pill pill-c3">CC Exposure</span><br>
+
+    <span class="match-txt">Climate change magnitude &amp; velocity acting on the focal target. Defines environmental context.</span>
+
+  </div>
+
+  <div class="cg-cell cg-c4">
+
+    <span class="match-pill pill-rra">Threshold setter</span><br>
+
+    <span class="match-txt">High exposure shifts strategy from Resistance → Resilience → Transition.</span>
+
+  </div>
+
+</div>
+
+ 
+
+<!-- Intrinsic Sensitivity -->
+
+<div class="cg-row">
+
+  <div class="cg-cell cg-row-label">Intrinsic Sensitivity</div>
+
+  <div class="cg-cell cg-c1">
+
+    <span class="match-pill pill-c1">Sensitivity</span><br>
+
+    <span class="match-txt">Degree to which the system is affected by climate stimuli. Part of vulnerability.</span>
+
+  </div>
+
+  <div class="cg-cell cg-c2">
+
+    <span class="match-pill pill-c2">Sensitivity / Susceptibility</span><br>
+
+    <span class="match-txt">Embedded within the revised vulnerability concept alongside adaptive capacity.</span>
+
+  </div>
+
+  <div class="cg-cell cg-c3">
+
+    <span class="match-pill pill-c3">Conservation Capacity (partial)</span><br>
+
+    <span class="match-txt">Biotic &amp; abiotic specificity; range of tolerance. Contributes to Conservation Capacity.</span>
+
+  </div>
+
+  <div class="cg-cell cg-c4">
+
+    <span class="match-pill pill-rra">Strategy modifier</span><br>
+
+    <span class="match-txt">High sensitivity amplifies exposure effect; influences whether Resistance is feasible.</span>
+
+  </div>
+
+</div>
+
+ 
+
+<!-- Response Capacity -->
+
+<div class="cg-row">
+
+  <div class="cg-cell cg-row-label">Response Capacity</div>
+
+  <div class="cg-cell cg-c1">
+
+    <span class="match-pill pill-c1">Adaptive Capacity</span><br>
+
+    <span class="match-txt">Ability to adjust, cope with, or exploit climate change. Moderates vulnerability.</span>
+
+  </div>
+
+  <div class="cg-cell cg-c2">
+
+    <span class="match-pill pill-c2">Capacity to cope &amp; adapt</span><br>
+
+    <span class="match-txt">Core component of revised vulnerability; shares equal structural weight with sensitivity.</span>
+
+  </div>
+
+  <div class="cg-cell cg-c3">
+
+    <span class="match-pill pill-c3">Conservation Capacity (partial)</span><br>
+
+    <span class="match-txt">Ecological + management capacity to persist or transition. Combines with sensitivity.</span>
+
+  </div>
+
+  <div class="cg-cell cg-c4">
+
+    <span class="match-pill pill-rra">Strategy enabler</span><br>
+
+    <span class="match-txt">High capacity supports Resistance; moderate enables Resilience; low necessitates Transition.</span>
+
+  </div>
+
+</div>
+
+ 
+
+<!-- Integrated Output -->
+
+<div class="cg-row">
+
+  <div class="cg-cell cg-row-label">Integrated Output</div>
+
+  <div class="cg-cell cg-c1">
+
+    <span class="match-pill pill-c1">Vulnerability score</span><br>
+
+    <span class="match-txt">Single composite of all three components.</span>
+
+  </div>
+
+  <div class="cg-cell cg-c2">
+
+    <span class="match-pill pill-c2">Risk</span><br>
+
+    <span class="match-txt">Jointly determined by hazard, exposure, and the revised vulnerability (S + AC).</span>
+
+  </div>
+
+  <div class="cg-cell cg-c3">
+
+    <span class="match-pill pill-c3">Refugia Potential</span><br>
+
+    <span class="match-txt">Sites where conservation capacity exceeds climate exposure; identifies refuge locations.</span>
+
+  </div>
+
+  <div class="cg-cell cg-c4">
+
+    <span class="match-pill pill-rra">Strategy selection</span><br>
+
+    <span class="match-txt">Refugia potential score maps directly onto R�R�T strategy space.</span>
+
+  </div>
+
+</div>
+
+```
+
+ 
+
+  </div><!-- /comp-grid -->
+
+ 
+
+  <!-- ═══════════════ PART C ═══════════════ -->
+
+ 
+
+  <div class="comp-section-label">Part C � RRA Strategy Alignment</div>
+
+  <div class="rra-band">
+
+ 
+
+```
+
+<div class="rra-block rra-resist">
+
+  <div class="rra-label">Strategy 1</div>
+
+  <div class="rra-title">Resistance</div>
+
+  <div class="rra-desc">Minimize disturbance; maintain current ecological structure and function. Appropriate where climate exposure is low relative to conservation capacity � high-refugia sites.</div>
+
+  <div class="chip-row">
+
+    <span class="chip chip-resist">Low CC Exposure</span>
+
+    <span class="chip chip-resist">High Cons. Capacity</span>
+
+    <span class="chip chip-resist">Low Sensitivity</span>
+
+    <span class="chip chip-resist">Strong AC</span>
+
+  </div>
+
+</div>
+
+ 
+
+<div class="rra-block rra-resil">
+
+  <div class="rra-label">Strategy 2</div>
+
+  <div class="rra-title">Resilience</div>
+
+  <div class="rra-desc">Enhance ability to absorb stress and recover. Intermediate exposure and capacity � refugia potential present but conditional. Management can augment conservation capacity.</div>
+
+  <div class="chip-row">
+
+    <span class="chip chip-resil">Moderate CC Exposure</span>
+
+    <span class="chip chip-resil">Moderate Sensitivity</span>
+
+    <span class="chip chip-resil">Moderate AC</span>
+
+    <span class="chip chip-neutral">Conditional Refugia</span>
+
+  </div>
+
+</div>
+
+ 
+
+<div class="rra-block rra-trans">
+
+  <div class="rra-label">Strategy 3</div>
+
+  <div class="rra-title">Transition</div>
+
+  <div class="rra-desc">Facilitate ecological transformation toward novel states. High exposure overwhelms conservation capacity; current conditions unsustainable. Low or no refugia potential.</div>
+
+  <div class="chip-row">
+
+    <span class="chip chip-trans">High CC Exposure</span>
+
+    <span class="chip chip-trans">High Sensitivity</span>
+
+    <span class="chip chip-trans">Limited AC</span>
+
+    <span class="chip chip-trans">Low Refugia Potential</span>
+
+  </div>
+
+</div>
+
+```
+
+ 
+
+  </div><!-- /rra-band -->
+
+ 
+
+  <!-- ═══════════════ CAPTION ═══════════════ -->
+
+ 
+
+  <div class="caption">
+
+    <strong>Figure X.</strong> Convergence of IPCC vulnerability frameworks and the Refugia Conservation Cycle (RCC), and their joint alignment with Resistance�Resilience�Transition (RRA) management strategies. <strong>Part A</strong> traces the evolution of the IPCC vulnerability concept from the TAR/AR4 (vulnerability = exposure + sensitivity + adaptive capacity) through the SREX/AR5/AR6 revision, in which <em>exposure</em> was separated from vulnerability and redefined as elements at risk, while vulnerability was reconceptualized as a function of sensitivity and capacity to cope and adapt. This revised structure is structurally equivalent to the RCC, in which climate change exposure is an external driver and conservation capacity integrates sensitivity and adaptive capacity. <strong>Part B</strong> maps component-level correspondences across all three frameworks, demonstrating that despite different terminologies and disciplinary origins, all three share the same underlying logical architecture: an external climate driver acting upon a target whose intrinsic response is a function of sensitivity and adaptive capacity. <strong>Part C</strong> shows how the integrated output of each framework (vulnerability score, risk level, or refugia potential) maps onto RRA strategy space, with high-refugia / low-vulnerability sites favoring Resistance strategies and high-exposure / low-capacity sites necessitating Transition. Colors follow the Wong (2011) colorblind-safe palette.
+
+    <div class="refs">
+
+      Estoque, R.C., Ishtiaque, A., Parajuli, J., Athukorala, D., Rabby, Y.W., &amp; Ooba, M. (2023). Has the IPCC's revised vulnerability concept been well adopted? <em>Ambio</em> 52:376�389. https://doi.org/10.1007/s13280-022-01806-z<br>
+
+      IPCC (2012). <em>Managing the Risks of Extreme Events and Disasters to Advance Climate Change Adaptation (SREX)</em>. Cambridge University Press.<br>
+
+      IPCC (2022). <em>Climate Change 2022: Impacts, Adaptation and Vulnerability. Contribution of Working Group II to the Sixth Assessment Report.</em> Cambridge University Press.<br>
+
+      Morelli, T.L., et al. (2020). Climate-change refugia: Biodiversity in the slow lane. <em>Frontiers in Ecology and the Environment</em> 18:228�234.<br>
+
+      Wong, B. (2011). Color blindness. <em>Nature Methods</em> 8:441.
+
+    </div>
+
+  </div>
+
+ 
+
+</div><!-- /wrap -->
+
+</body>
+
+</html>
+
+ 
