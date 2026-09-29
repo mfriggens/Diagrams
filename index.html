@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Diagrams Index</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px auto;
+            max-width: 800px;
+            line-height: 1.6;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #005f73;
+        }
+        #searchInput {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            border: 2px solid #ccc;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        li {
+            padding: 10px;
+            background: #f8f9fa;
+            margin-bottom: 8px;
+            border-radius: 6px;
+            transition: background 0.2s;
+        }
+        li:hover {
+            background: #e7f5ff;
+        }
+        a {
+            text-decoration: none;
+            color: #0077b6;
+            font-weight: bold;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .highlight {
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Diagram Library</h1>
+
+    <input type="text" id="searchInput" placeholder="Search diagrams...">
+
+    <ul id="diagramList">
+        <li>CrosswalkVA_RRS.htmlCrosswalk VA → RRS Diagram</a></li>
+        <li>flowchart1.html</li>
+        <li>flowchart2.htmlFlowchart 2 (Placeholder)</a></li>
+        <li>flowchart3.html</li>
+        <li>flowchart4.html</li>
+    </ul>
+
+    <script>
+        const searchInput = document.getElementById("searchInput");
+        const listItems = document.querySelectorAll("#diagramList li");
+
+        searchInput.addEventListener("input", function() {
+            const query = searchInput.value.toLowerCase();
+
+            listItems.forEach(li => {
+                const text = li.innerText.toLowerCase();
+
+                // Show/hide list items
+                li.style.display = text.includes(query) ? "" : "none";
+
+                // Highlight matching text
+                const link = li.querySelector("a");
+                const originalText = link.textContent;
+                if (query && text.includes(query)) {
+                    const highlighted = originalText.replace(
+                        new RegExp(query, "gi"),
+                        match => `<span class="highlight">${match}</span>`
+                    );
+                    link.innerHTML = highlighted;
+                } else {
+                    link.innerHTML = originalText;
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
